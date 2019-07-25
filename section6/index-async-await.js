@@ -1,9 +1,4 @@
 console.log('before');
-// getUser(1)
-//     .then(user => getRepositories(user.gitHubUserName))
-//     .then(repos => getCommits(repos[0]))
-//     .then(commits => console.log('commits', commits))
-//     .catch(err => console.log('error', err.message));
 
 async function displayCommits() {
     try {
@@ -17,6 +12,13 @@ async function displayCommits() {
     }
 }
 displayCommits();
+
+// PROMISES approach below replaced by ASYNC/AWAIT approach above
+// getUser(1)
+//     .then(user => getRepositories(user.gitHubUserName))
+//     .then(repos => getCommits(repos[0]))
+//     .then(commits => console.log('commits', commits))
+//     .catch(err => console.log('error', err.message));
 
 console.log('after');
 
