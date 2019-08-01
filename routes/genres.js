@@ -5,8 +5,14 @@ const router = express.Router();
 
 // read all genres
 router.get('/', async (req, res) => {
-    const genres = await Genre.find().sort('name');
-    res.send(genres);
+    try {
+        const genres = await Genre.find().sort('name');
+        res.send(genres);
+    }
+    catch (ex) {
+        // log exception
+        res.status(500).send('somthing failed');
+    }
 });
 
 // create a genre
